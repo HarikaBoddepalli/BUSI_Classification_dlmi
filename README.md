@@ -1,16 +1,16 @@
-# 🩺 BUSI Breast Ultrasound Classification
+# BUSI Breast Ultrasound Classification
 
 A deep learning project for classifying breast ultrasound images into **Normal**, **Benign**, and **Malignant** categories using ResNet50 transfer learning.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project was built as part of the **Deep Learning for Medical Imaging (DLMI)** course. The goal is to train a model that takes a breast ultrasound image as input and predicts whether it is Normal, Benign, or Malignant — without data leakage between patients.
 
 ---
 
-## 🗂️ Dataset
+## Dataset
 
 **BUSI — Breast Ultrasound Images Dataset**
 
@@ -25,7 +25,7 @@ This project was built as part of the **Deep Learning for Medical Imaging (DLMI)
 
 ---
 
-## 🧠 Model
+## Model
 
 - **Architecture:** ResNet50 pretrained on ImageNet
 - **Custom Head:** GlobalAvgPool → FC(512) → FC(128) → FC(3) + Softmax
@@ -36,7 +36,7 @@ This project was built as part of the **Deep Learning for Medical Imaging (DLMI)
 
 ---
 
-## 🔑 Key Features
+## Key Features
 
 - **Patient Hold-Out Split** — no data leakage between train/val/test
 - **CLAHE preprocessing** — enhances ultrasound contrast
@@ -45,7 +45,7 @@ This project was built as part of the **Deep Learning for Medical Imaging (DLMI)
 
 ---
 
-## 📊 Results
+## Results
 
 | Metric | Value |
 |---|---|
@@ -56,25 +56,8 @@ This project was built as part of the **Deep Learning for Medical Imaging (DLMI)
 
 ---
 
-## 🚀 How to Run
 
-1. Open `BUSI_dataset_resnet50.ipynb` in **Google Colab**
-2. Set Runtime → **GPU (T4)**
-3. Run all cells top to bottom
-4. Upload your `kaggle.json` when prompted in Step 1
-
----
-
-## 📁 Files
-
-| File | Description |
-|---|---|
-| `BUSI_dataset_resnet50.ipynb` | Main training notebook |
-| `BUSI_DLMI_Report_Final.docx` | Full project report |
-
----
-
-## 🛠️ Requirements
+## Requirements
 
 ```
 tensorflow >= 2.19
