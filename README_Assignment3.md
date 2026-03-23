@@ -1,19 +1,18 @@
-# 🩺 BUSI Breast Ultrasound Classification — Assignment 3
+# BUSI Breast Ultrasound Classification — Assignment 3
 ## Depthwise Separable Convolutions & MobileNetV1
 
 Built on top of **Assignment 2** (ResNet50 transfer learning). This assignment focuses on **proper loss function design** and computationally efficient architectures using Depthwise Separable Convolutions (DSC).
 
 ---
 
-## 📌 Assignment Focus
+## Assignment Focus
 - Satisfy all **3 desirable properties of a loss function** (monotonically increasing, differentiable, faster convergence)
-- Ensure **no vanishing gradient** — through proof
 - Replace standard convolutions with **DSC** and observe the loss
 - Train **MobileNetV1** and report accuracy + trainable parameters
 
 ---
 
-## 🗂️ Dataset
+## Dataset
 **BUSI — Breast Ultrasound Images Dataset** (780 images, masks excluded)
 
 | Class | Images | Class Weight |
@@ -26,7 +25,7 @@ Built on top of **Assignment 2** (ResNet50 transfer learning). This assignment f
 
 ---
 
-## 📋 Parts
+## Parts
 
 ### Part A — ResNet50 + DSC Head + ELU
 - Replaced the Dense classification head with **2 Depthwise Separable Convolution blocks**
@@ -56,7 +55,7 @@ Built on top of **Assignment 2** (ResNet50 transfer learning). This assignment f
 
 ---
 
-## 🔑 Key Design Decisions
+## Key Design Decisions
 
 **Loss Function — Categorical Cross-Entropy** satisfies all 3 properties:
 1. Monotonically increasing: `L = −Σ y_true · log(y_pred)` — loss always increases when prediction worsens
@@ -75,7 +74,7 @@ For K=3, Cout=512 → saving = 88.7%
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Open `BUSI_DSC_MobileNet.ipynb` in **Google Colab**
 2. Set Runtime → **GPU (T4)**
@@ -84,7 +83,7 @@ For K=3, Cout=512 → saving = 88.7%
 
 ---
 
-## 📊 Final Comparison
+## Final Comparison
 
 | Model | Accuracy | Macro F1 | Trainable Params |
 |---|---|---|---|
@@ -93,16 +92,6 @@ For K=3, Cout=512 → saving = 88.7%
 | Part B — MobileNetV1 + ELU | 75.00% | 73.33% | 279,683 |
 
 **Takeaway:** MobileNetV1 achieves the same accuracy as ResNet50 with **85.8% fewer parameters** — proving DSC is computationally efficient without sacrificing performance when used as a complete architecture.
-
----
-
-## 📁 Files
-
-| File | Description |
-|---|---|
-| `BUSI_DSC_MobileNet.ipynb` | Main notebook — Part A and Part B |
-| `BUSI_Assignment3_Report.docx` | Full report with plots and analysis |
-| `README_Assignment3.md` | This file |
 
 ---
 
